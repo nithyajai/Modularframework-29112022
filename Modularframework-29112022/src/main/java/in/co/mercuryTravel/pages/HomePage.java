@@ -66,10 +66,12 @@ public class HomePage extends BasePage {
 	
 	@FindBy(id = "acc_user_passconf")
 	private WebElement ConfirmPassword;
-		
 	
 	@FindBy(id = "acc_mobile_no")
 	private WebElement MobileNo;
+	
+    @FindBy(linkText = "Log Out")
+    private WebElement Logout;
 	
 	public HomePage(WebDriver driver)
 	{
@@ -78,6 +80,7 @@ public class HomePage extends BasePage {
 	PageFactory.initElements(driver, this);	
 		
 	}
+
 	public void UserLogin(String username,String password)
 	throws Exception{
 		mousecontrol.moveToElement(CustomerLoginLink);
@@ -93,14 +96,18 @@ public class HomePage extends BasePage {
 		waitutils.waitForSeconds(2);
 
 		elementcontrol.clickElement(Login);	
-		
-		waitutils.waitForSeconds(5);
-		
+				
 	}
 	public String getmessage()throws Exception{
-	
+		
 	return elementcontrol.getText(message);
 	
+	}
+	public void logout()throws Exception
+	{
+		
+	mousecontrol.moveToElement(message);
 	
+	mousecontrol.moveToElementAndClick(Logout);	
 	}
 }

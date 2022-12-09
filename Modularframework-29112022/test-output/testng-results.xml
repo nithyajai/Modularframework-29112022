@@ -1,34 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="1" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression Suite" duration-ms="22177" started-at="2022-12-02T17:29:34 CET" finished-at="2022-12-02T17:29:56 CET">
+  <suite name="Default suite" duration-ms="38722" started-at="2022-12-08T18:55:04 CET" finished-at="2022-12-08T18:55:43 CET">
     <groups>
     </groups>
-    <test name="Regression Test" duration-ms="22177" started-at="2022-12-02T17:29:34 CET" finished-at="2022-12-02T17:29:56 CET">
+    <test name="Default test" duration-ms="38722" started-at="2022-12-08T18:55:04 CET" finished-at="2022-12-08T18:55:43 CET">
       <class name="in.co.mercuryTravel.test.MercuryTravelTests">
-        <test-method status="PASS" signature="presetup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="presetup" is-config="true" duration-ms="261" started-at="2022-12-02T17:29:34 CET" finished-at="2022-12-02T17:29:34 CET">
+        <test-method status="PASS" signature="presetup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="presetup" is-config="true" duration-ms="255" started-at="2022-12-08T18:55:04 CET" finished-at="2022-12-08T18:55:04 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- presetup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="setup" is-config="true" duration-ms="9972" started-at="2022-12-02T17:29:34 CET" finished-at="2022-12-02T17:29:44 CET">
+        <test-method status="PASS" signature="setup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="setup" is-config="true" duration-ms="11099" started-at="2022-12-08T18:55:04 CET" finished-at="2022-12-08T18:55:15 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="VerifyUserLoginWithCorrectCredentials()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="VerifyUserLoginWithCorrectCredentials" duration-ms="10648" started-at="2022-12-02T17:29:44 CET" finished-at="2022-12-02T17:29:55 CET">
-          <exception class="java.lang.AssertionError">
+        <test-method status="PASS" signature="VerifyUserLoginWithCorrectCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="VerifyUserLoginWithCorrectCredentials" duration-ms="8228" started-at="2022-12-08T18:55:18 CET" data-provider="getUserData" finished-at="2022-12-08T18:55:26 CET">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nithyajai23@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@789]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Welcome, Nithya]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyUserLoginWithCorrectCredentials -->
+        <test-method status="PASS" signature="aftermethod(org.testng.ITestResult)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="aftermethod" is-config="true" duration-ms="4" started-at="2022-12-08T18:55:26 CET" finished-at="2022-12-08T18:55:26 CET">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyUserLoginWithCorrectCredentials status=SUCCESS method=MercuryTravelTests.VerifyUserLoginWithCorrectCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="FAIL" signature="VerifyUserLoginWithCorrectCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="VerifyUserLoginWithCorrectCredentials" duration-ms="15740" started-at="2022-12-08T18:55:26 CET" data-provider="getUserData" finished-at="2022-12-08T18:55:42 CET">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nithyajai23@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@7489]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Welcome, Nithya]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [Welcome, Nithya] but found [Welcome, Nithya 1]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"partial link text","selector":"Welcome"}
+  (Session info: chrome=108.0.5359.96)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3ff640614363630dfb2a17dcc0746118, findElement {using=partial link text, value=Welcome}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.96, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\DHANDA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58673}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58673/devtoo..., se:cdpVersion: 108.0.5359.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ff640614363630dfb2a17dcc0746118]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Welcome, Nithya] but found [Welcome, Nithya 1]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at in.co.mercuryTravel.test.MercuryTravelTests.VerifyUserLoginWithCorrectCredentials(MercuryTravelTests.java:30)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"partial link text","selector":"Welcome"}
+  (Session info: chrome=108.0.5359.96)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3ff640614363630dfb2a17dcc0746118, findElement {using=partial link text, value=Welcome}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.96, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\DHANDA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58673}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58673/devtoo..., se:cdpVersion: 108.0.5359.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ff640614363630dfb2a17dcc0746118
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy17.getText(Unknown Source)
+at commonlibs.implementation.CommonElement.getText(CommonElement.java:12)
+at in.co.mercuryTravel.pages.HomePage.getmessage(HomePage.java:103)
+at in.co.mercuryTravel.test.MercuryTravelTests.VerifyUserLoginWithCorrectCredentials(MercuryTravelTests.java:46)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,30 +138,30 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyUserLoginWithCorrectCredentials -->
-        <test-method status="PASS" signature="aftermethod(org.testng.ITestResult)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="aftermethod" is-config="true" duration-ms="586" started-at="2022-12-02T17:29:55 CET" finished-at="2022-12-02T17:29:55 CET">
+        <test-method status="PASS" signature="aftermethod(org.testng.ITestResult)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="aftermethod" is-config="true" duration-ms="509" started-at="2022-12-08T18:55:42 CET" finished-at="2022-12-08T18:55:42 CET">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyUserLoginWithCorrectCredentials status=FAILURE method=MercuryTravelTests.VerifyUserLoginWithCorrectCredentials()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyUserLoginWithCorrectCredentials status=FAILURE method=MercuryTravelTests.VerifyUserLoginWithCorrectCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftermethod -->
-        <test-method status="PASS" signature="cleanup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="cleanup" is-config="true" duration-ms="882" started-at="2022-12-02T17:29:55 CET" finished-at="2022-12-02T17:29:56 CET">
+        <test-method status="PASS" signature="cleanup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="cleanup" is-config="true" duration-ms="928" started-at="2022-12-08T18:55:42 CET" finished-at="2022-12-08T18:55:43 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
-        <test-method status="PASS" signature="postcleanup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@67b467e9]" name="postcleanup" is-config="true" duration-ms="781" started-at="2022-12-02T17:29:56 CET" finished-at="2022-12-02T17:29:57 CET">
+        <test-method status="PASS" signature="postcleanup()[pri:0, instance:in.co.mercuryTravel.test.MercuryTravelTests@5204062d]" name="postcleanup" is-config="true" duration-ms="718" started-at="2022-12-08T18:55:43 CET" finished-at="2022-12-08T18:55:44 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postcleanup -->
       </class> <!-- in.co.mercuryTravel.test.MercuryTravelTests -->
-    </test> <!-- Regression Test -->
-  </suite> <!-- Regression Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

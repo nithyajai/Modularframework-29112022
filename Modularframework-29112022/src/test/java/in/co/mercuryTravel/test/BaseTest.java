@@ -3,7 +3,6 @@ package in.co.mercuryTravel.test;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.grid.config.Config;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -76,67 +75,28 @@ e.printStackTrace();}
 @BeforeSuite
 public void presetup()
 {
-	//.html - will be overrided for that %s.html-time where execution start
-	Reportfileneme=String.format("%s/reports/MercuryTravelTestReports-%s.html",currentWorkingDirectory,
-			ExecutionStartDate);
-
-	htmlReporter=new ExtentHtmlReporter(Reportfileneme)	;
-
-     extent=new ExtentReports();
-
-     extent.attachReporter(htmlReporter);
+	initializeReports();	
 }
+
 
 @BeforeClass
 public void setup()throws Exception
 {
-	
-extenttest=extent.createTest("Setup - setup the pre-requisit to run automated test cases");
-//It will read the property browsertype
-browsertype=configProperties.getProperty("browserType")	;
+invokebrowser()	;
 
-extenttest.log(Status.INFO,"Browser INvoked Is"+browsertype);
+getdriverInstance();
 
-cmndriver=new CommonDriver(browsertype)	;
+initializeApplicationpages();
 
-PageLoadTimeout=Integer.parseInt(configProperties.getProperty("PageLoadTimeout"));
+initializescreenshotvariable();
 
-extenttest.log(Status.INFO,"Pageload timeout set Is"+PageLoadTimeout);
-
-elementDetectionTimeout=Integer.parseInt(configProperties.getProperty("elementDetectionTimeout"));
-
-extenttest.log(Status.INFO,"Implicit wait timeout set Is"+elementDetectionTimeout);
-
-cmndriver.setPageloadTimeout(PageLoadTimeout);
-
-cmndriver.setElementDetectionTimeout(elementDetectionTimeout);
-
-baseUrl=configProperties.getProperty("baseurl");
-
-extenttest.log(Status.INFO,"BaseUrl where the browser navigate to"+baseUrl);
-
-cmndriver.navigateToFirstUrl(baseUrl);
-
-driver=cmndriver.getDriver();
-
-extenttest.log(Status.INFO,"Initialising All Pages");
-
-screenshotcontrol=new screenshotcontrol(driver);
-
-homepage=new HomePage(driver);
 }
-
 @AfterClass
 public void cleanup()throws Exception
 {	
-cmndriver.closeAllBrowser();
-
-extenttest=extent.createTest("Clean Up -Clean Process");
-
-extenttest.log(Status.INFO,"Closing ALl Browser Instance"+baseUrl);
+	closeALlBrowserInstances();
 
 }
-
 @AfterSuite
 public void postcleanup()
 {	
@@ -158,10 +118,10 @@ if(Result.getStatus()==ITestResult.SUCCESS)
 else if(Result.getStatus()==ITestResult.FAILURE)
 {	
 	extenttest.log(Status.FAIL,"Test Case Fail-"+testcasename);	
-	
+		
 	screenshotcontrol.captureAndSaveScreenshot(Screenshotfilename);
 	//Attach screenshot to the report
-	extenttest.addScreenCaptureFromPath(Screenshotfilename);
+    extenttest.addScreenCaptureFromPath(Screenshotfilename);
 }
 else 
 {	
@@ -170,6 +130,78 @@ else
 }	
 	
           }
+
+private void initializeReports() {
+	//.html - will be overrided for that %s.html-time where execution start
+		Reportfileneme=String.format("%s/reports/MercuryTravelTestReports-%s.html",currentWorkingDirectory,
+				ExecutionStartDate);
+
+		htmlReporter=new ExtentHtmlReporter(Reportfileneme)	;
+
+	     extent=new ExtentReports();
+
+	     extent.attachReporter(htmlReporter);	
+}
+private void invokebrowser()throws Exception {
+	extenttest=extent.createTest("Setup - setup the pre-requisit to run automated test cases");
+	//It will read the property browsertype
+	browsertype=configProperties.getProperty("browserType")	;
+
+	extenttest.log(Status.INFO,"Browser INvoked Is"+browsertype);
+
+	cmndriver=new CommonDriver(browsertype)	;
+	
+	PageLoadTimeout=Integer.parseInt(configProperties.getProperty("PageLoadTimeout"));
+
+	extenttest.log(Status.INFO,"Pageload timeout set Is"+PageLoadTimeout);
+
+	elementDetectionTimeout=Integer.parseInt(configProperties.getProperty("elementDetectionTimeout"));
+
+	extenttest.log(Status.INFO,"Implicit wait timeout set Is"+elementDetectionTimeout);
+
+	cmndriver.setPageloadTimeout(PageLoadTimeout);
+
+	cmndriver.setElementDetectionTimeout(elementDetectionTimeout);
+
+	baseUrl=configProperties.getProperty("baseurl");
+
+	extenttest.log(Status.INFO,"BaseUrl where the browser navigate to"+baseUrl);
+	
+	cmndriver.navigateToFirstUrl(baseUrl);
+
+}
+private void getdriverInstance() {
+
+	driver=cmndriver.getDriver();
+	
+}
+private void initializeApplicationpages() {
+
+	extenttest.log(Status.INFO,"Initialising All Pages");
+	
+	homepage=new HomePage(driver);
+
+}
+private void initializescreenshotvariable() {
+
+	screenshotcontrol=new screenshotcontrol(driver);
+
+}
+
+
+
+//private void closeinitialmodalhomepage() {
+	//homepage.closeinitialmodal();}
+
+
+private void closeALlBrowserInstances()throws Exception {
+	cmndriver.closeAllBrowser();
+
+	extenttest=extent.createTest("Clean Up -Clean Process");
+
+	extenttest.log(Status.INFO,"Closing ALl Browser Instance"+baseUrl);	
+}
+
 
    }
 

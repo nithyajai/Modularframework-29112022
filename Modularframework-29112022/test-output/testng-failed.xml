@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Suite]">
-  <test thread-count="5" name="Regression Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="in.co.mercuryTravel.test.MercuryTravelTests">
         <methods>
-          <include name="VerifyUserLoginWithCorrectCredentials"/>
+          <include name="VerifyUserLoginWithCorrectCredentials" invocation-numbers="1"/>
           <include name="postcleanup"/>
           <include name="presetup"/>
           <include name="aftermethod"/>
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- in.co.mercuryTravel.test.MercuryTravelTests -->
     </classes>
-  </test> <!-- Regression Test(failed) -->
-</suite> <!-- Failed suite [Regression Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -5,7 +5,7 @@
     <classes>
       <class name="in.co.mercuryTravel.test.MercuryTravelTests">
         <methods>
-          <include name="VerifyUserLoginWithCorrectCredentials"/>
+          <include name="VerifyUserLoginWithCorrectCredentials" invocation-numbers="0 1"/>
           <include name="postcleanup"/>
           <include name="presetup"/>
           <include name="aftermethod"/>

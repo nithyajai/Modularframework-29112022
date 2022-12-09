@@ -30,7 +30,7 @@ public class screenshotcontrol implements Iscreenshot {
 		
 		if(imgFile.exists()) {
 			
-			throw new Exception("Image with this file name already exist...");
+			throw new Exception("Image with this file name already exist.");
 		}
 		tmpFile=camera.getScreenshotAs(OutputType.FILE);
 		
