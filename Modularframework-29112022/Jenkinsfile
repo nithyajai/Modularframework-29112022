@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Code Checkout') {
+            steps {
+               git changelog: false, poll: false, url: 'https://github.com/nithyajai/Modularframework-29112022.git'
+            }
+        }
+         stage('MavenClean') {
+            steps {
+                dir("Modularframework-29112022") {
+                powershell 'mvn clean'
+                  }
+             }
+        }
+         stage('MavenTest') {
+            steps {
+                dir("Modularframework-29112022") {
+             powershell 'mvn test'
+                  }
+             }
+        }
+    }
+}
